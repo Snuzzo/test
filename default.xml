@@ -535,6 +535,10 @@
   <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs" remote="phantom" />
   <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="phantom" />
   <project path="hardware/libhardware" name="hardware_libhardware" groups="pdk" remote="phantom" />
+  <project path="hardware/qcom/audio" name="hardware_qcom_audio" remote="phantom" />
+  <project path="hardware/qcom/bt" name="hardware_qcom_bt" remote="phantom" />
+  <project path="hardware/qcom/display" name="hardware_qcom_display" remote="phantom" />
+  <project path="hardware/qcom/gps" name="hardware_qcom_gps" remote="phantom" />
   <project path="hardware/qcom/keymaster" name="hardware_qcom_keymaster" remote="phantom" />
   <project path="hardware/qcom/media" name="hardware_qcom_media" remote="phantom" />
   <project path="manifest" name="manifest" remote="phantom" />
@@ -546,12 +550,5 @@
   <!-- BEGIN TOOLCHAINS -->
   <project name="aarch64-linux-gnu-6.x" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-6.x" remote="phantom" revision="master" />
   <!-- END TOOLCHAINS -->
-
-  <!-- BEGIN LINEAGE -->
-  <project path="hardware/qcom/audio" name="android_hardware_qcom_audio" remote="laos" />
-  <project path="hardware/qcom/bt" name="android_hardware_qcom_bt" remote="laos" />
-  <project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="laos" />
-  <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="laos" />
-  <!-- END LINEAGE -->
 
 </manifest>
