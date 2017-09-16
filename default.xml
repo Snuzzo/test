@@ -518,7 +518,7 @@
 
   <!-- BEGIN PHANTOM -->
   <project path="bionic" name="bionic" remote="phantom" />
-  <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" remote="phantom" />
+  <project path="build/kati" name="build_kati" groups="pdk,tradefed" remote="phantom" />
   <project path="build/make" name="build_make" remote="phantom" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
