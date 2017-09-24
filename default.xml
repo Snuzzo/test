@@ -529,6 +529,7 @@
   <project path="hardware/qcom/gps" name="hardware_qcom_gps" remote="inv" />
   <project path="hardware/qcom/media" name="hardware_qcom_media" remote="inv" />
   <project path="hardware/ril" name="hardware_ril" remote="inv" />
+  <project path="manifest" name="manifest" remote="inv" />
   <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="inv" />
   <project path="system/bt" name="system_bt" remote="inv" />
   <project path="system/core" name="system_core" remote="inv" />
