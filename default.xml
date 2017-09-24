@@ -4,6 +4,10 @@
            fetch="https://android.googlesource.com/"
            revision="refs/tags/android-8.0.0_r11" />
 
+  <remote  name="inv"
+           fetch="https://github.com/InvictusROM"
+           revision="o" />
+
   <remote  name="phantom"
            fetch="https://github.com/PhantomROM"
            revision="o" />
@@ -299,7 +303,6 @@
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" />
-  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
@@ -350,7 +353,6 @@
   <project path="hardware/qcom/msm8x09" name="platform/hardware/qcom/msm8x09" groups="qcom_msm8x09" />
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom,pdk" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk" />
-  <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
@@ -394,7 +396,6 @@
   <project path="packages/providers/CallLogProvider" name="platform/packages/providers/CallLogProvider" groups="pdk-fs" />
   <project path="packages/providers/ContactsProvider" name="platform/packages/providers/ContactsProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/DownloadProvider" name="platform/packages/providers/DownloadProvider" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" groups="pdk-fs" />
   <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/TvProvider" name="platform/packages/providers/TvProvider" groups="pdk-fs" />
@@ -455,7 +456,6 @@
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" />
-  <project path="system/bt" name="platform/system/bt" groups="pdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" />
   <project path="system/connectivity/wifilogd" name="platform/system/connectivity/wifilogd" groups="pdk" />
@@ -508,18 +508,10 @@
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
-  <!-- BEGIN V20 -->
-  <project path="device/lge/h910" name="device_lge_h910" remote="phantom-devices" revision="o" />
-  <project path="device/lge/v20-common" name="device_lge_v20-common" remote="phantom-devices" revision="o" />
-  <project path="device/lge/msm8996-common" name="device_lge_msm8996-common" remote="phantom-devices" revision="o" />
-  <project path="vendor/lge" name="vendor_lge" remote="phantom-devices" revision="o" />
-  <project path="kernel/lge/v20" name="USA-RedDragon/kernel_lge_v20" remote="github" revision="o" />
-  <!-- END V20 -->
+  <!-- BEGIN Invictus -->
 
-  <!-- BEGIN PHANTOM -->
-  <project path="bionic" name="bionic" remote="phantom" />
-  <project path="build/kati" name="build_kati" groups="pdk,tradefed" remote="phantom" />
-  <project path="build/make" name="build_make" remote="phantom" >
+  <project path="bionic" name="bionic" remote="inv" />
+  <project path="build/make" name="build_make" remote="inv" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -528,23 +520,30 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="build_soong" remote="phantom" >
+  <project path="build/soong" name="build_soong" remote="inv" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="phantom" />
+  <project path="frameworks/av" name="frameworks_av" remote="inv" />
+  <project path="frameworks/base" name="frameworks_base" remote="inv" />
+  <project path="hardware/qcom/gps" name="hardware_qcom_gps" remote="inv" />
+  <project path="hardware/qcom/media" name="hardware_qcom_media" remote="inv" />
+  <project path="hardware/ril" name="hardware_ril" remote="inv" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="inv" />
+  <project path="system/bt" name="system_bt" remote="inv" />
+  <project path="system/core" name="system_core" remote="inv" />
+  <project path="vendor/invictus" name="vendor_invictus" remote="inv" />
+  <!-- END Invictus -->
+
+  <!-- BEGIN PHANTOM -->
+  <project path="build/kati" name="build_kati" groups="pdk,tradefed" remote="phantom" />
   <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="phantom" />
   <project path="hardware/libhardware" name="hardware_libhardware" groups="pdk" remote="phantom" />
   <project path="hardware/qcom/audio" name="hardware_qcom_audio" remote="phantom" />
   <project path="hardware/qcom/bt" name="hardware_qcom_bt" remote="phantom" />
   <project path="hardware/qcom/display" name="hardware_qcom_display" remote="phantom" />
-  <project path="hardware/qcom/gps" name="hardware_qcom_gps" remote="phantom" />
   <project path="hardware/qcom/keymaster" name="hardware_qcom_keymaster" remote="phantom" />
-  <project path="hardware/qcom/media" name="hardware_qcom_media" remote="phantom" />
-  <project path="manifest" name="manifest" remote="phantom" />
   <project path="packages/inputmethods/LatinIME" name="packages_inputmethods_LatinIME" remote="phantom" />
-  <project path="system/core" name="system_core" remote="phantom" />
-  <project path="vendor/phantom" name="vendor_phantom" remote="phantom" />
   <!-- END PHANTOM -->
 
   <!-- BEGIN TOOLCHAINS -->
