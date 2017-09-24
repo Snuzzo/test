@@ -1,10 +1,10 @@
-Phantom Github
+Invictus Github
 ====================
 
 Getting Started
 ---------------
 
-To get started with building Phantom, you'll need to get
+To get started with building Invictus, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
 
 You will also need to setup the Build Environment before starting or compiling anything
@@ -16,9 +16,9 @@ You will also need to setup the Build Environment before starting or compiling a
 Initialize Source
 --------------------
 (Assuming you have a valid build environment setup)
-- mkdir phantom (or whatever you want to name the source folder)
-- cd ~/phantom
-- repo init -u https://github.com/PhantomROM/manifest.git -b o
+- mkdir invictus (or whatever you want to name the source folder)
+- cd ~/invictus
+- repo init -u https://github.com/InvictusRom/manifest.git -b o
 
 Sync Source
 --------------------
@@ -30,11 +30,11 @@ Build Source
 
 Choose Device
 --------------------
-- lunch phantom_*device*-userdebug
+- lunch invictus_*device*-userdebug
 
 Clean Builds
 --------------------
-- cd ~/phantom
+- cd ~/invictus
 - repo sync -c -f -jx --force-sync --no-clone-bundle --no-tags (x being however many cpu jobs, may also use -c as above)
 - lunch and pick the right device (refer to above for choosing right device to build)
 - make clean
@@ -42,7 +42,7 @@ Clean Builds
 
 Dirty Builds
 --------------------
-- cd ~/phantom
+- cd ~/invictus
 - repo sync -c -f -jx --force-sync --no-clone-bundle --no-tags (x being however many cpu jobs, may also use -c as above)
 - lunch and pick the right device (refer to above for choosing right device to build)
 - make dirty
