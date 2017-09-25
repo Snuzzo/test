@@ -22,7 +22,8 @@ Initialize Source
 
 Sync Source
 --------------------
-- repo sync -c -f -jx --force-sync --no-clone-bundle --no-tags (x being however many cpu jobs, you can also use -c to sync only the current branch specified by repo init)
+- repo sync -c -f -j# --force-sync --no-clone-bundle --no-tags 
+- (# being however many cpu jobs)
 
 Build Source
 --------------------
@@ -30,12 +31,12 @@ Build Source
 
 Choose Device
 --------------------
-- lunch invictus_*device*-userdebug
+- lunch inv_*device*-userdebug
 
 Clean Builds
 --------------------
 - cd ~/invictus
-- repo sync -c -f -jx --force-sync --no-clone-bundle --no-tags (x being however many cpu jobs, may also use -c as above)
+- repo sync -c -f -j# --force-sync --no-clone-bundle --no-tags (# being however many cpu jobs, may also use -c as above)
 - lunch and pick the right device (refer to above for choosing right device to build)
 - make clean
 - make bacon -j# (# being however many cpu jobs, for example, I build with -j32)
@@ -43,7 +44,7 @@ Clean Builds
 Dirty Builds
 --------------------
 - cd ~/invictus
-- repo sync -c -f -jx --force-sync --no-clone-bundle --no-tags (x being however many cpu jobs, may also use -c as above)
+- repo sync -c -f -j# --force-sync --no-clone-bundle --no-tags (# being however many cpu jobs, may also use -c as above)
 - lunch and pick the right device (refer to above for choosing right device to build)
 - make dirty
 - make bacon -j# (# being however many cpu jobs, for example, I build with -j32)
